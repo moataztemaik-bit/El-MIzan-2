@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - El Mizan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/About.css">
+ <style>
+    .navbar {
+      background-color: rgba(15,45,28,0.92) !important;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.25) !important;
+      padding: 12px 0;
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .navbar-brand { color: #c9a84c !important; font-weight: 700; font-size: 22px; letter-spacing: 1.5px; }
+    .navbar .fa-scale-balanced { color: #c9a84c; font-size: 17px; }
+    .navbar .nav-link { color: rgba(255,255,255,0.82) !important; font-size: 14px; font-weight: 500; padding: 7px 14px !important; border-radius: 50px; transition: all 0.25s; }
+    .navbar .nav-link:hover, .navbar .nav-link.active { background-color: #2e7d4f !important; color: #fff !important; }
+    .dropdown-menu { background-color: #0f2d1c !important; border: 1px solid rgba(201,168,76,0.2) !important; border-radius: 10px; overflow: hidden; }
+    .dropdown-item { color: #e8d49a !important; font-size: 14px; font-weight: 500; transition: 0.2s; }
+    .dropdown-item:hover { background-color: #2e7d4f !important; color: #fff !important; }
+    .navbar .btn-success { background-color: #c9a84c !important; border-color: #c9a84c !important; color: #0f2d1c !important; font-weight: 700; font-size: 13px; border-radius: 50px; padding: 7px 20px; transition: 0.25s; }
+    .navbar .btn-success:hover { background-color: #e8d49a !important; border-color: #e8d49a !important; color: #0f2d1c !important; }
+    .navbar-toggler { border-color: rgba(201,168,76,0.35) !important; }
+    .navbar-toggler-icon { filter: invert(1); }
+    .group { display: flex; align-items: center; position: relative; max-width: 210px; }
+    .group .icon { position: absolute; left: 12px; fill: rgba(255,255,255,0.45); width: 15px; height: 15px; pointer-events: none; }
+    .input { width: 100%; height: 38px; padding: 0 14px 0 34px; border: 1.5px solid transparent; border-radius: 50px; background-color: rgba(255,255,255,0.1); color: #fff; font-size: 13px; outline: none; transition: 0.3s; margin: 0 !important; }
+    .input::placeholder { color: rgba(255,255,255,0.4); }
+    .input:focus, .input:hover { border-color: #c9a84c; background-color: rgba(255,255,255,0.15); box-shadow: 0 0 0 3px rgba(201,168,76,0.15); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid ms-5">
+      <div class="d-flex align-items-center gap-2">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <a class="navbar-brand" href="../index.html">El Mizan</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link rounded-pill" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle rounded-pill" href="#" role="button" data-bs-toggle="dropdown">
+              What can we do
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item rounded-pill" href="../HTML/Currency_conversion.html">Convert Currencies</a></li>
+              <li><a class="dropdown-item rounded-pill" href="../HTML/Installment Tracker.html ">Installment Tracker</a></li>
+              <li><a class="dropdown-item rounded-pill" href="../HTML/Expenses allocation.html ">Expenses Allocation</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded-pill" href="../index.html#moataz">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded-pill" href="Contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active rounded-pill" href="#">About</a>
+          </li>
+        </ul>
+                <div class="d-flex align-items-center gap-3 mt-2 mt-lg-0 me-4">
+
+        <div class="group">
+  <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+    <g>
+      <path
+        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+      ></path>
+    </g>
+  </svg>
+  <input class="input m-2" type="search" placeholder="Search For Services
+  " />
+</div>
+        <a href="../index.html#khaled" class="btn btn-success rounded-pill" id="navAuthArea">Sign up</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="Head">
+      <div class="container">
+        <h2>Project Story</h2>
+        <p class="p1">Managing money in Egypt isn't always straightforward. Between monthly bills, installment plans
+          for appliances, electronics, or furniture, and the constant fluctuation of the dollar-to-pound
+          exchange rate — keeping track of where your money goes can feel overwhelming.</p>
+        <h4 style="color: #708871; padding: 10px; text-align: center;">El Mizan was built to fix that.</h4>
+        <p class="p3">The idea started simple: a tool that speaks the language of the everyday Egyptian user.
+          No complicated dashboards, no financial jargon — just a clean, intuitive way to log your
+          expenses, track your installments, and always know where you stand.</p>
+        <p class="p4">One of El Mizan's standout features is its built-in currency converter. In a market where
+          prices shift between dollars and Egyptian pounds constantly, El Mizan lets you enter amounts
+          in either currency and instantly see the equivalent — so you're never caught off guard when
+          budgeting for an imported product or an online purchase.</p>
+        <p class="p5">But the heart of El Mizan is its installment tracker. Whether you're paying off a phone,
+          a fridge, or a loan, El Mizan keeps a clear record of what you owe, how many payments are
+          left, and when the next one is due — all in one place.</p>
+        <p class="p6">Built with simplicity as a core value, El Mizan is designed so that anyone — regardless
+          of their tech experience — can open it and immediately feel in control of their finances.</p>
+        <p class="p7">Because everyone deserves to find their balance.  </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">El Mizan</div>
+    <p class="footer-tagline">Your balance, in every sense.</p>
+    <div class="footer-socials">
+      <a href="https://twitter.com"  target="_blank" class="footer-social" id="f-twitter"><i class="bi bi-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank" class="footer-social" id="f-linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://youtube.com"  target="_blank" class="footer-social" id="f-youtube"><i class="bi bi-youtube"></i></a>
+      <a href="https://facebook.com" target="_blank" class="footer-social" id="f-facebook"><i class="bi bi-facebook"></i></a>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">&copy; 2025 El Mizan · All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+  function checkUserLogin() {
+    const savedName = localStorage.getItem("userFirstName");
+    const navAuthArea = document.getElementById("navAuthArea");
+    if (!savedName || !navAuthArea) return;
+
+    navAuthArea.outerHTML = `
+        <div id="navAuthArea" style="
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            white-space: nowrap;
+        ">
+            <span style="
+                background-color: #c9a84c;
+                color: #0f2d1c;
+                font-weight: 700;
+                font-size: 13px;
+                padding: 5px 14px;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            ">
+                <i class="fa-solid fa-user" style="font-size: 11px;"></i>
+                ${savedName}
+            </span>
+            <button onclick="logoutUser()" style="
+                font-size: 12px;
+                font-weight: 600;
+                font-family: 'Segoe UI', sans-serif;
+                padding: 5px 12px;
+                border: 1px solid rgba(201,168,76,0.4);
+                border-radius: 50px;
+                color: rgba(255,255,255,0.75);
+                background: transparent;
+                cursor: pointer;
+            "
+            onmouseover="this.style.background='#e53e3e'; this.style.color='#fff'; this.style.borderColor='#e53e3e';"
+            onmouseout="this.style.background='transparent'; this.style.color='rgba(255,255,255,0.75)'; this.style.borderColor='rgba(201,168,76,0.4)';"
+            >Log out</button>
+        </div>
+    `;
+}
+
+function logoutUser() {
+    localStorage.removeItem("userFirstName");
+    localStorage.removeItem("salary");
+    window.location.reload();
+}
+
+document.addEventListener("DOMContentLoaded", checkUserLogin);
+    </script>
+</body>
+</html>

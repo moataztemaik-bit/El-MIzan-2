@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Mizan</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IE:wght@100..400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/Homepage.css">
+
+    <style>
+        /* ── NAVBAR ── */
+        .navbar {
+            background-color: rgba(15, 45, 28, 0.92) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(201,168,76,0.25) !important;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-brand { color: #c9a84c !important; font-weight: 700; font-size: 22px; letter-spacing: 1.5px; }
+        .navbar .fa-scale-balanced { color: #c9a84c; font-size: 17px; }
+        .navbar .nav-link {
+            color: rgba(255,255,255,0.82) !important;
+            font-size: 14px; font-weight: 500;
+            padding: 7px 14px !important;
+            border-radius: 50px; transition: all 0.25s;
+        }
+        .navbar .nav-link:hover, .navbar .nav-link.active {
+            background-color: #2e7d4f !important; color: #ffffff !important;
+        }
+        .dropdown-menu {
+            background-color: #0f2d1c !important;
+            border: 1px solid rgba(201,168,76,0.2) !important;
+            border-radius: 10px; overflow: hidden;
+        }
+        .dropdown-item { color: #e8d49a !important; font-size: 14px; font-weight: 500; transition: 0.2s; }
+        .dropdown-item:hover { background-color: #2e7d4f !important; color: #ffffff !important; }
+        .navbar .btn-success {
+            background-color: #c9a84c !important; border-color: #c9a84c !important;
+            color: #0f2d1c !important; font-weight: 700; font-size: 13px;
+            border-radius: 50px; padding: 7px 20px; transition: 0.25s;
+        }
+        .navbar .btn-success:hover {
+            background-color: #e8d49a !important; border-color: #e8d49a !important; color: #0f2d1c !important;
+        }
+        .group { display: flex; align-items: center; position: relative; max-width: 210px; }
+        .group .icon { position: absolute; left: 12px; fill: rgba(255,255,255,0.45); width: 15px; height: 15px; pointer-events: none; }
+        .input {
+            width: 100%; height: 38px; padding: 0 14px 0 34px;
+            border: 1.5px solid transparent; border-radius: 50px;
+            background-color: rgba(255,255,255,0.1); color: #ffffff;
+            font-size: 13px; outline: none; transition: 0.3s; margin: 0 !important;
+        }
+        .input::placeholder { color: rgba(255,255,255,0.4); }
+        .input:focus, .input:hover {
+            border-color: #c9a84c; background-color: rgba(255,255,255,0.15);
+            box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+        }
+        .navbar-toggler { border-color: rgba(201,168,76,0.35) !important; }
+        .navbar-toggler-icon { filter: invert(1); }
+
+        /* ── SIGN UP FORM ── */
+        .Sign_Up {
+            background: #f4f9f6; padding: 30px; border-radius: 12px;
+            border: 1px solid rgba(46,125,79,0.2); color: #0f2d1c;
+            max-width: 600px; margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .Sign_Up form { display: flex; flex-direction: column; gap: 15px; }
+        .form-group-wrap { display: flex; flex-direction: column; width: 100%; }
+        .Sign_Up input, .Sign_Up select {
+            width: 100% !important; padding: 10px 14px;
+            border: 1.5px solid #a8d5b5; border-radius: 8px;
+            font-size: 14px; background-color: #fff; color: #0f2d1c;
+            outline: none; transition: all 0.2s; margin: 0 !important;
+        }
+        .Sign_Up input:focus, .Sign_Up select:focus {
+            border-color: #2e7d4f; box-shadow: 0 0 0 3px rgba(46,125,79,0.1);
+        }
+        .Sign_Up button[type="submit"] {
+            background-color: #1a4d2e; color: #c9a84c; border: none;
+            padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.25s;
+        }
+        .Sign_Up button[type="submit"]:hover { background-color: #2e7d4f; }
+        .Sign_Up input.is-invalid, .Sign_Up select.is-invalid {
+            border-color: #fc8181 !important; background-color: #fff5f5 !important;
+        }
+        .Sign_Up input.is-valid, .Sign_Up select.is-valid {
+            border-color: #68d391 !important; background-color: #f0fff4 !important;
+        }
+        .field-error {
+            font-size: 12px; color: #e53e3e; margin-top: 4px;
+            font-weight: 500; display: flex; align-items: center; gap: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid ms-4">
+
+            <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <a class="navbar-brand" href="index.html">El Mizan</a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link active rounded-pill" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle rounded-pill" href="#" role="button" data-bs-toggle="dropdown">What can we do</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item rounded-pill" href="HTML/Currency_conversion.html">Convert Currencies</a></li>
+                            <li><a class="dropdown-item rounded-pill" href="HTML/Installment Tracker.html">Installment Tracker</a></li>
+                            <li><a class="dropdown-item rounded-pill" href="HTML/Expenses allocation.html">Expenses Allocation</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link rounded-pill" href="#moataz">Services</a></li>
+                    <li class="nav-item"><a class="nav-link rounded-pill" href="HTML/Contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link rounded-pill" href="HTML/About.html">About</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-3 mt-2 mt-lg-0 me-4">
+                    <div class="group">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+                            <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"/>
+                        </svg>
+                        <input class="input" type="search" placeholder="Search For Services">
+                    </div>
+                    <!-- ✅ <a> مباشرة بدون div wrapper -->
+                    <a href="#khaled" class="btn btn-success rounded-pill" id="navAuthArea">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="headertwo text-center">
+        <h1 style="font-family: 'Playwrite IE', cursive; font-weight: bold; letter-spacing:4px;">El Mizan</h1>
+        <h3 style="font-family:Arial, Helvetica, sans-serif">
+            <hr style="height: 2px;">
+            <span style="color: #ccc;">Take Full Control Of</span><br>
+            <span style="color: green; font-weight: bold;">Your Money</span>
+        </h3>
+
+        <div class="d-flex justify-content-center gap-3 mt-4" id="headerAuthArea">
+            <a href="#khaled" class="btn btn-success rounded-pill px-4">Sign up</a>
+            <a href="About.html" class="btn btn-outline-dark rounded-pill px-4 text-light">Learn More</a>
+        </div>
+
+        <div class="banner-stats">
+            <div class="stat">
+                <span class="stat-num">+500</span>
+                <span class="stat-label">Clients</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">+2</span>
+                <span class="stat-label">Currencies Supported</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">98%</span>
+                <span class="stat-label">Satisfaction</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="saconde">
+    <div class="projecr-idea">
+        <div class="service mt-4 mb-4" id="moataz"></div>
+        <p class="our text-center">Our Services</p>
+
+        <div class="container">
+            <div class="row text-center">
+                <div class="one col-md-4 col-12 mb-4">
+                    <h5>Convert Currencies</h5>
+                    <p>In our project you can convert dollar to Egyptian pound in easily way</p>
+                    <a class="btn btn-success" href="../HTML/Currency_conversion.html">Try It</a>
+                </div>
+                <div class="one col-md-4 col-12 mb-4">
+                    <h5>Installment Tracker</h5>
+                    <p>A personal installment tracker that logs your payment plans, tracks how much you've paid vs. what's remaining, and visualizes your progress — all in one place.</p>
+                    <a class="btn btn-success" href="../HTML/Installment Tracker.html">Try It</a>
+                </div>
+                <div class="one col-md-4 col-12 mb-4">
+                    <h5>Expense Organizer</h5>
+                    <p>A personal expense tracker that logs your spending, sorts it by category, and visualizes it in a chart — all in one place.</p>
+                    <a class="btn btn-success" href="../HTML/Expenses allocation.html">Try It</a>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="Sign_Up mt-4" id="khaled">
+                    <h3 style="font-family: Arial, Helvetica, sans-serif; text-align: center; margin-bottom: 20px;">Sign Up</h3>
+                    <form id="signupForm" novalidate>
+                        <div class="d-flex gap-2 mx-auto" style="width:100%; max-width:500px;">
+                            <div class="form-group-wrap">
+                                <input type="text" id="firstName" placeholder="First Name">
+                            </div>
+                            <div class="form-group-wrap">
+                                <input type="text" id="lastName" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group-wrap mx-auto" style="width:100%; max-width:500px;">
+                            <input type="email" id="email" placeholder="Enter your Email">
+                        </div>
+                        <div class="d-flex gap-2 mx-auto" style="width:100%; max-width:500px;">
+                            <div class="form-group-wrap">
+                                <input type="number" id="salary" placeholder="Enter the Salary">
+                            </div>
+                            <div class="form-group-wrap">
+                                <input type="number" id="balance" placeholder="Bank Balance">
+                            </div>
+                        </div>
+                        <div class="form-group-wrap mx-auto" style="width:100%; max-width:500px;">
+                            <select id="currency">
+                                <option value="">Select Currency</option>
+                                <option value="EGP">EGP</option>
+                                <option value="USD">USD</option>
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" style="width:100%; max-width:500px;">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-brand">El Mizan</div>
+    <p class="footer-tagline">Your balance, in every sense.</p>
+    <div class="footer-socials">
+        <a href="https://twitter.com"  target="_blank" class="footer-social" id="f-twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="footer-social" id="f-linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://youtube.com"  target="_blank" class="footer-social" id="f-youtube"><i class="bi bi-youtube"></i></a>
+        <a href="https://facebook.com" target="_blank" class="footer-social" id="f-facebook"><i class="bi bi-facebook"></i></a>
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">&copy; 2026 El Mizan · All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+/* ══════════════════════════════════════
+   VALIDATION RULES
+══════════════════════════════════════ */
+const rules = {
+    firstName: { required: true, minLen: 2,  label: 'First name' },
+    lastName:  { required: true, minLen: 2,  label: 'Last name' },
+    email:     { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, label: 'Email' },
+    salary:    { required: true, minNum: 1,  label: 'Salary' },
+    balance:   { required: true, minNum: 0,  label: 'Bank balance' },
+    currency:  { required: true,             label: 'Currency' }
+};
+
+function getFieldError(id, value) {
+    const r = rules[id];
+    if (!r) return null;
+    const v = value.trim();
+    if (r.required && !v)                return `${r.label} is required.`;
+    if (r.minLen && v.length < r.minLen) return `${r.label} must be at least ${r.minLen} characters.`;
+    if (r.pattern && !r.pattern.test(v)) return 'Please enter a valid email address.';
+    if (r.minNum !== undefined && (isNaN(v) || Number(v) < r.minNum))
+        return `${r.label} must be a valid number (minimum ${r.minNum}).`;
+    return null;
+}
+
+function setFieldState(input, errorMsg) {
+    const wrap = input.closest('.form-group-wrap');
+    if (!wrap) return true;
+    const old = wrap.querySelector('.field-error');
+    if (old) old.remove();
+    input.classList.remove('is-invalid', 'is-valid');
+    if (errorMsg) {
+        input.classList.add('is-invalid');
+        const el = document.createElement('span');
+        el.className = 'field-error';
+        el.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${errorMsg}`;
+        wrap.appendChild(el);
+        return false;
+    }
+    input.classList.add('is-valid');
+    return true;
+}
+
+// Real-time validation
+Object.keys(rules).forEach(id => {
+    const input = document.getElementById(id);
+    if (!input) return;
+    input.addEventListener('blur',  () => setFieldState(input, getFieldError(id, input.value)));
+    input.addEventListener('input', () => {
+        if (input.classList.contains('is-invalid'))
+            setFieldState(input, getFieldError(id, input.value));
+    });
+});
+
+/* ══════════════════════════════════════
+   NAVBAR AUTH
+══════════════════════════════════════ */
+function checkUserLogin() {
+    const savedName   = localStorage.getItem("userFirstName");
+    const navAuthArea = document.getElementById("navAuthArea");
+    const headerAuth  = document.getElementById("headerAuthArea");
+
+    if (!savedName) return;
+
+    // Navbar pill
+    if (navAuthArea) {
+        navAuthArea.outerHTML = `
+            <div id="navAuthArea" style="display:flex;align-items:center;gap:8px;white-space:nowrap;">
+                <span style="background:#c9a84c;color:#0f2d1c;font-weight:700;font-size:13px;padding:5px 14px;border-radius:50px;display:flex;align-items:center;gap:6px;">
+                    <i class="fa-solid fa-user" style="font-size:11px;"></i>${savedName}
+                </span>
+                <button onclick="logoutUser()" style="font-size:12px;font-weight:600;font-family:'Segoe UI',sans-serif;padding:5px 12px;border:1px solid rgba(201,168,76,0.4);border-radius:50px;color:rgba(255,255,255,0.75);background:transparent;cursor:pointer;"
+                    onmouseover="this.style.background='#e53e3e';this.style.color='#fff';this.style.borderColor='#e53e3e';"
+                    onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,0.75)';this.style.borderColor='rgba(201,168,76,0.4)';"
+                >Log out</button>
+            </div>`;
+    }
+
+    // Hero header buttons
+    if (headerAuth) {
+        headerAuth.innerHTML = `
+            <span class="text-light fs-4 fw-medium">Welcome back, <span style="color:#c9a84c;">${savedName}</span>!</span>
+            <a href="HTML/green_admin_dashboard.html" class="btn btn-success rounded-pill px-4">Go to Dashboard</a>
+        `;
+    }
+}
+
+function logoutUser() {
+    localStorage.removeItem("userFirstName");
+    localStorage.removeItem("salary");
+    window.location.reload();
+}
+
+/* ══════════════════════════════════════
+   SUCCESS OVERLAY
+══════════════════════════════════════ */
+function showSuccessOverlay(name, callback) {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position:fixed;inset:0;z-index:9999;
+        background:rgba(15,45,28,0.92);
+        display:flex;align-items:center;justify-content:center;
+        backdrop-filter:blur(8px);
+        animation:fadeInOverlay 0.4s ease;
+    `;
+    overlay.innerHTML = `
+        <style>
+            @keyframes fadeInOverlay { from{opacity:0} to{opacity:1} }
+            @keyframes popIn { from{transform:scale(0.7);opacity:0} to{transform:scale(1);opacity:1} }
+            @keyframes checkDraw { from{stroke-dashoffset:60} to{stroke-dashoffset:0} }
+            @keyframes countDown { from{width:100%} to{width:0%} }
+        </style>
+        <div style="background:#f4f9f6;border-radius:20px;padding:48px 56px;text-align:center;max-width:400px;width:90%;animation:popIn 0.45s cubic-bezier(0.34,1.56,0.64,1) 0.1s both;position:relative;overflow:hidden;">
+            <div style="width:80px;height:80px;border-radius:50%;background:#1a4d2e;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M10 20 L17 27 L30 13" stroke="#c9a84c" stroke-width="3.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        stroke-dasharray="60" stroke-dashoffset="60"
+                        style="animation:checkDraw 0.5s ease 0.4s forwards;"/>
+                </svg>
+            </div>
+            <h3 style="font-family:Arial,sans-serif;color:#1a4d2e;font-size:22px;font-weight:700;margin-bottom:8px;">Welcome, ${name}! 🎉</h3>
+            <p style="color:#4a7c59;font-size:14px;margin-bottom:24px;">
+                Your account has been created successfully.<br>Redirecting to your dashboard…
+            </p>
+            <div style="height:4px;background:#d4e8da;border-radius:2px;overflow:hidden;">
+                <div style="height:100%;background:#c9a84c;border-radius:2px;animation:countDown 2.5s linear forwards;"></div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+    setTimeout(callback, 2500);
+}
+
+/* ══════════════════════════════════════
+   FORM SUBMIT
+══════════════════════════════════════ */
+document.getElementById('signupForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    let isFormValid = true;
+    Object.keys(rules).forEach(id => {
+        const input = document.getElementById(id);
+        if (input && !setFieldState(input, getFieldError(id, input.value)))
+            isFormValid = false;
+    });
+
+    if (!isFormValid) return;
+
+    const firstName = document.getElementById("firstName").value.trim();
+    const salary    = document.getElementById("salary").value;
+
+    localStorage.setItem("userFirstName", firstName);
+    localStorage.setItem("salary", salary);
+
+    showSuccessOverlay(firstName, function () {
+        window.location.href = "../HTML/green_admin_dashboard.html";
+    });
+});
+
+/* ══════════════════════════════════════
+   INIT
+══════════════════════════════════════ */
+document.addEventListener("DOMContentLoaded", checkUserLogin);
+
+</script>
+</body>
+</html> 

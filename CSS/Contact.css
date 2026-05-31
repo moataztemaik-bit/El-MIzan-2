@@ -1,0 +1,252 @@
+:root {
+  --green-dark:   #1a4d2e;
+  --green-mid:    #2e7d4f;
+  --green-light:  #a8d5b5;
+  --gold:         #c9a84c;
+  --gold-light:   #e8d49a;
+  --surface:      #f4f9f6;
+  --dark:         #0f2d1c;
+  --white:        #ffffff;
+}
+/* From Uiverse.io by LightAndy1 */ 
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 220px;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: rgba(255,255,255,0.12);
+  color: var(--white);
+  transition: 0.3s ease;
+}
+
+.input::placeholder { color: rgba(255,255,255,0.5); }
+
+.input:focus,
+.input:hover {
+  outline: none;
+  border-color: var(--gold);
+  background-color: rgba(255,255,255,0.18);
+  box-shadow: 0 0 0 4px rgba(201,168,76,0.15);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: rgba(255,255,255,0.5);
+  width: 1rem;
+  height: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    width: 100%;
+}
+
+/* ── HEADER ────────────────────────────────── */
+.header {
+    flex: 1;
+    background-attachment: scroll;
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* gradient من الأخضر الغامق للشفاف — يربط الـ navbar بالصورة */
+    background: linear-gradient(
+        180deg,
+        rgba(15, 45, 28, 0.75) 0%,
+        rgba(15, 45, 28, 0.15) 55%,
+        rgba(15, 45, 28, 0.45) 100%
+    );
+}
+
+/* ── NAVBAR ────────────────────────────────── */
+.navbar {
+    /* شفاف مع tint خضرا غامق بدل الكريمي */
+    background-color: rgba(15, 45, 28, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.25); /* gold border خفيف */
+    position: sticky;
+    z-index: 1000;
+}
+
+/* Brand icon & text */
+.navbar .navbar-brand,
+.navbar .fa-scale-balanced {
+    color: var(--gold) !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    background-color: var(--green-mid);
+    color: var(--white) !important;
+    opacity: 1;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    background-color: var(--dark);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.dropdown-item {
+    color: var(--gold-light);
+    font-weight: bold;
+    transition: 0.3s all ease-in-out;
+}
+
+.dropdown-item:hover {
+    color: var(--white);
+    background-color: var(--green-mid);
+}
+
+/* Sign up button in navbar */
+.navbar .btn-success {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--dark);
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.navbar .btn-success:hover {
+    background-color: var(--gold-light);
+    border-color: var(--gold-light);
+    color: var(--dark);
+}
+.footer {
+    background-color: var(--dark);
+    border-top: 3px solid var(--gold); /* gold accent line */
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    min-height: 100px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer h2 {
+    color: var(--gold) !important;  /* gold للعنوان */
+}
+
+.footer p {
+    color: rgba(255,255,255,0.6) !important;
+}
+
+.footer i {
+    margin: 0 auto;
+    font-size: 30px;
+}
+
+#twitter  { color: var(--white); transition: 0.5s all ease-in-out; }
+#linkedin { color: var(--white); transition: 0.5s all ease-in-out; }
+#youtube  { color: var(--white); transition: 0.5s all ease-in-out; }
+#facebook { color: var(--white); transition: 0.5s all ease-in-out; }
+
+#twitter:hover  { color: #1da1f2; }
+#linkedin:hover { color: #0077b5; }
+#youtube:hover  { color: #ff0000; }
+#facebook:hover { color: #1877f2; }
+
+/* ── RESPONSIVE ────────────────────────────── */
+.navbar-toggler-icon { filter: invert(1); }
+
+@media (max-width: 576px) {
+    .header { min-height: 80vh; }
+    .headertwo {
+        padding-left: 15px;
+        margin-top: 120px;
+        align-items: center;
+        text-align: center;
+    }
+    .headertwo h1 { font-size: 28px; }
+    .headertwo h3 { font-size: 22px; }
+    .banner-stats { flex-direction: column; gap: 10px; }
+    .stat-divider { display: none; }
+    .saconde { padding: 20px; }
+    .saconde .one { margin-bottom: 15px; }
+    form input, form select, button, .input-eye { width: 90%; }
+    .Sign_Up { padding: 20px 10px; }
+    .navbar .container-fluid { margin-left: 10px !important; }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .header { min-height: 90vh; }
+    .headertwo { padding-left: 30px; margin-top: 150px; }
+    .headertwo h3 { font-size: 30px; }
+    .banner-stats { flex-wrap: wrap; gap: 10px; }
+    .saconde { padding: 30px; }
+    form input, form select, button, .input-eye { width: 75%; }
+    .saconde .one { margin-bottom: 20px; }
+}
+:root {
+    --gd: #1a4d2e;
+    --gm: #2e7d4f;
+    --gl: #a8d5b5;
+    --gold: #c9a84c;
+    --gold-l: #e8d49a;
+    --surf: #f4f9f6;
+    --dark: #0f2d1c;
+  }
+  .cp-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0; font-family: 'Segoe UI', sans-serif; border-radius: 14px; overflow: hidden; border: 1.5px solid var(--gl); }
+  .cp-left { background: var(--surf); padding: 0; }
+  .cp-left-head { background: var(--gd); color: var(--gold); text-align: center; padding: 18px 24px; font-size: 16px; font-weight: 500; letter-spacing: 0.3px; }
+  .cp-grid { display: grid; grid-template-columns: 1fr 1fr; border-left: 1px solid var(--gl); }
+  .cp-item { padding: 28px 20px; text-align: center; border-bottom: 1px solid var(--gl); border-right: 1px solid var(--gl); }
+  .cp-item i { font-size: 28px; color: var(--gd); display: block; margin-bottom: 10px; }
+  .cp-item h4 { font-size: 14px; font-weight: 500; color: var(--gd); margin: 0 0 6px; }
+  .cp-item p { font-size: 13px; color: var(--gm); margin: 0; line-height: 1.6; }
+  .cp-right { background: #fff; border-left: 1.5px solid var(--gl); }
+  .cp-right-head { background: var(--gd); color: var(--gold); text-align: center; padding: 18px 24px; font-size: 16px; font-weight: 500; letter-spacing: 0.3px; }
+  .cp-form { padding: 20px 24px; }
+  .cp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .cp-field { position: relative; }
+  .cp-field i { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--gm); font-size: 15px; }
+  .cp-field input { width: 100%; padding: 10px 10px 10px 32px; border: 1.5px solid var(--gl); border-radius: 8px; font-size: 13px; outline: none; background: var(--surf); color: var(--dark); font-family: inherit; transition: border-color 0.2s; }
+  .cp-field input:focus { border-color: var(--gm); box-shadow: 0 0 0 3px rgba(46,125,79,0.1); }
+  .cp-field input::placeholder { color: #aaa; }
+  textarea { width: 100%; padding: 10px; border: 1.5px solid var(--gl); border-radius: 8px; font-size: 13px; outline: none; background: var(--surf); color: var(--dark); font-family: inherit; resize: vertical; min-height: 80px; margin-bottom: 10px; transition: border-color 0.2s; }
+  textarea:focus { border-color: var(--gm); box-shadow: 0 0 0 3px rgba(46,125,79,0.1); }
+  .cp-submit { display: flex; justify-content: center; margin-top: 6px; }
+  .cp-submit button { background: var(--gd); color: var(--gold); border: none; padding: 11px 36px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.2s; font-family: inherit; }
+  .cp-submit button:hover { background: var(--gm); }
+  .cp-submit button i { font-size: 16px; color: var(--gold); }
